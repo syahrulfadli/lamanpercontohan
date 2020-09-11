@@ -1,0 +1,91 @@
+
+{{ define "main" }}
+{{ $page := . }}
+{{ partial "sharebutton/index.html" . }}
+<div class="wrapper">
+<section id="main" class="serif">
+{{ if .Params.tagbreadcrumb }}
+{{ partial "tagbreadcrumb.html" . }}
+{{ else }}
+{{ partial "breadcrumb.html" . }}
+{{ end }}
+  <div class="cover">
+  <h4 class="date-single"> {{ .Date.Format "January 2, 2006" }} </h4>
+  <h1 class="title-single gigantic-title">{{ .Title }}</h1>
+
+<!-- cover image -->
+
+{{- with $page.Params.cover -}}
+            {{- $images := . -}}
+            {{- with $page.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image1 := .Resize "560x q100" -}}
+                    {{- $image2 := .Resize "300x q100" -}}
+    
+                    <div class="cover-image-single">
+                            <img srcset="
+                            {{ $image2.RelPermalink }} 600w,
+                            {{ $image1.RelPermalink }} 1000w,  
+                            " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+  </div>
+  <div class="card-meta">
+  {{ with .Params.series }}
+  <ul id="series">
+    {{ range . }}
+      <li><a href="{{ "series" | absURL}}/{{ . | urlize }}">{{ . }}</a> </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ partial "articles/author.html" . }}
+    <span id="wordcount"> {{ .WordCount }} kata • {{ .ReadingTime }} menit membaca</span>
+  </div>
+  <!-- co author
+  <span>
+    {{ with .Params.authors }}
+      <div class="card-meta co-authors">        
+        {{ $co := . }}
+        {{ if lt 1 $co }}
+        Coauthors:
+          {{ else }}
+        {{ end }}
+        {{ range after 1 . }}
+          {{ $colink := . }}
+          <a href="{{ "authors" | absURL }}/{{ . | urlize }}"><span>{{ . }} </span></a> 
+        {{ end }}
+     </div>
+    {{ end }}
+  </span>
+-->
+
+  <div class="article-wrapper">
+        <article id="content">
+           {{ .Content }}
+        </article>
+        <div class="single-tags">
+          {{ with .Params.tags }}
+          {{ range . }}
+          <span class="tags">
+          <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+          </span>
+          {{ end }}
+          {{ end }}
+          </div>
+  </div>
+</section>
+<aside id="meta">
+   {{ partial "nextprev/nextprev.html" . }}
+</aside>
+<aside id="meta">
+
+{{ partial "disqus.html" . }}
+
+{{ partial "terkait/list.html" . }}
+</aside>
+{{ partial "langganan.html" . }}
+</div>
+{{ end }}

@@ -1,0 +1,23 @@
+.tags{
+    font-size: 13px;
+    margin-right: 7px;
+    a{
+        color: $grey;
+    }
+}
+.tags:hover{
+    a{
+        color: $black;
+    }
+}
+.single-tags {
+    text-align: right;
+    width: 40%;
+    float: right;
+    @media screen and (max-width:800px){
+        float:none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+}

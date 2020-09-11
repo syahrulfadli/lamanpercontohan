@@ -1,0 +1,5 @@
+anchor : Center
+
+markup.goldmark.renderer:
+  unsafe: true
+

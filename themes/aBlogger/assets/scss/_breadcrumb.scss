@@ -1,0 +1,31 @@
+
+.breadcrumb{
+  color:$black;
+  font-size: 12px;
+  list-style:none;
+  padding:0;
+  a{
+    color:$black;
+  }
+  li{
+    display: inline-block;
+  }
+  li::before{
+    content:"";
+  }
+  li::after{
+    content: "";
+    mask:url(/images/chevron-right.svg);
+    -webkit-mask:url(/images/chevron-right.svg);
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    width: 16px;
+    height: 16px;
+    background-color:$black;
+    display: inline-block;
+    vertical-align: middle
+  }
+  li:last-child::after{
+    display:none;
+  }
+}

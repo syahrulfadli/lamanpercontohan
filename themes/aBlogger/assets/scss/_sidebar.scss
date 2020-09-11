@@ -1,0 +1,15 @@
+.withsidebar{
+    width: 100%;
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-areas: 
+    'main main main main sidebar';
+    .container{
+        grid-area: main;
+        width: 66,6666%;
+    }
+    .sidebar{
+        grid-area: sidebar;
+        width: 33,3333%;
+    }
+}

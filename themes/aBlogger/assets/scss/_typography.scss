@@ -1,0 +1,154 @@
+@mixin mediascreen480($val1,$val2) {
+    @media screen and (max-width:480px){
+        font-size: $val1;
+        line-height: $val2;
+    }
+}
+h1{
+    font-size: 43px;
+    line-height: 68px;
+    @include mediascreen480(33px,64px);
+}
+h2{
+    font-size: 34px;
+    line-height: 54px;
+    @include mediascreen480(26px,41px);
+}
+h3{
+    font-size: 27px;
+    line-height: 44px;
+    @include mediascreen480(20px,32px);
+}
+h4{
+    font-size: 21px;
+    line-height: 35px;
+    @include mediascreen480(16px,26px);
+}
+.secondary{
+    font-size: 17px;
+    line-height: 30px;
+    @include mediascreen480(13px,22px )
+}
+.gigantic-title{
+    font-size: 55px;
+    line-height: 85px;
+    @include mediascreen480(42px,64px )
+}
+body{
+    font-family: Roboto, sans-serif;
+    font-size: 21px;
+    line-height: 35px;
+    @include mediascreen480(16px,26px );
+}
+.highlight{
+    pre{
+    overflow: auto;
+    padding: 20px;
+    line-height: normal;
+    background: $black !important;
+    }
+}
+.weight3{
+    font-weight: 300;
+}
+.weight4{
+    font-weight: 400;
+}
+.weight7{
+    font-weight: 700;
+}
+code{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    background-color: $shade;
+    padding: 3px 7px;
+    border-radius: 15px;
+    border:1px solid $shade;
+}
+a code,code a{
+    text-decoration: underline;
+    color: $black;
+}
+pre code{
+    font-family: inherit;
+    font-weight: inherit;
+    border:inherit;
+    border-radius: inherit;
+    padding: inherit;
+    background: transparent;
+}
+kbd{
+    font-family: Montserrat,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    background-color: $light;
+    border:1px solid $grey;
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    padding:4px 5px;
+    kbd{
+        padding:1px 5px;
+    }
+}
+blockquote{
+    border:1px solid $shade;
+    position: relative;
+    p{
+        margin:21px;
+    }
+}
+blockquote::before{
+    content: '"';
+    position: absolute;
+    top:4px;
+    left:1px;
+    font-size: 50px;
+    font-weight: 700;
+    color: $grey;
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+blockquote::after{
+    content: '"';
+    position: absolute;
+    bottom:-19px;
+    right:1px;
+    font-size: 50px;
+    font-weight: 700;
+    color: $grey;
+    right: 0;
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid $grey;
+  }
+  td{
+      padding:0 10px;
+  }
+hr{
+    border-width: 0px;
+}
+.footnotes{
+    border:1px solid $shade;
+    margin-top:55px;
+    position: relative;
+    a{
+        text-decoration: underline;
+    }
+}
+.footnotes::before {
+    content: "Catatan/Referensi";
+    position: absolute;
+    top: -15px;
+    font-weight: 700;
+    left: 15px;
+    background: $white;
+    padding:0 15px;
+}
+
+.linkindark{
+    color:#f3f2f4 !important;
+}

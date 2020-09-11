@@ -1,0 +1,30 @@
+{{ $page := . }}
+<div class="card" >
+    <div class="card-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+    {{- with $page.Params.cover -}}
+            {{- $images := . -}}
+            {{- with $page.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image1 := .Resize "x350 q100" -}}
+                    {{- $image2 := .Resize "x100 q90" -}}
+                    <div class="cover-image">
+                        <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
+                            <img loading="lazy" srcset="
+                            {{ $image2.RelPermalink }} 680w,
+                            {{ $image1.RelPermalink }} 1366w,  
+                            " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>
+                        </a>
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    <div class="card-wrapper">
+        <div class="stretched">
+            <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
+        <h2><a class="linkin" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
+        <p>
+            {{.Params.excerpt}}
+        </p>
+        </div>
+    </div>
+</div>

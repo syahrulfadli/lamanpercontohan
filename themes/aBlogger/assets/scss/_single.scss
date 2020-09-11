@@ -1,0 +1,49 @@
+.cover-image-single{
+    line-height: 0;
+    img{
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+.title-single{
+    margin:0 0 25px;
+    line-height: 55px;
+    font-size: 37px;
+}
+.date-single{
+    margin-bottom:0 ;
+    @media screen and (max-width:800px){
+        margin-top:0;
+    }
+}
+.excerpt{
+    margin-top:0;
+    line-height: 27px;
+}
+.nextprev {
+    border-top:1px solid $hover-border;
+    margin: 35px 0 0;
+    padding:25px 0 28px;
+    display: inline-block;
+    width: 100%;
+    a{
+        font-weight: 700;
+    }
+}
+.prev{
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+.next{
+    width: 50%;
+}
+.TOC {
+    position: sticky;
+    right: 0;
+    top:0;
+    width: 250px;
+    font-size: 17px;
+    float: right;
+    background:$light;
+}

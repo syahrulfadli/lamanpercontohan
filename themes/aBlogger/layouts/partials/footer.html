@@ -1,0 +1,14 @@
+<footer class="footer">
+    <div class="footer-wrapper">
+        <ul>
+            {{ with .Site.Menus.bottom }}
+            {{ range . }}
+                <li><a class="muted" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+            {{ end }}
+        {{ end }}
+        </ul>
+        <div class="credit">
+            © {{ dateFormat "2006" now }} {{ .Site.Title }}
+            </div>
+    </div>
+</footer>

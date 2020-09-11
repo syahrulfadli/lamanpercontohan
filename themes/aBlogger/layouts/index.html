@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+
+<div class="wrapper">
+
+    {{ with .Site.GetPage "section" "post" }}
+<div class="container">
+    {{ range .Paginator.Pages }}
+        {{- partial "articles/card.html" . -}}
+    {{ end }}
+    </div>
+    <div class="pagination-wrapper"> 
+        {{ template "_internal/pagination.html" . }}
+        </div>
+    {{ end }}
+
+</div>
+{{ end }}

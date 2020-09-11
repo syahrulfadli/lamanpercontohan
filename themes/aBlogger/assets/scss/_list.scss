@@ -1,0 +1,117 @@
+.container{
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    display: grid;
+    grid-column-gap:50px;
+    grid-row-gap:50px;
+    margin-top:100px;
+}
+.container::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.card{
+    grid-column-start: auto;
+    transition: $tr-normal;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: $shadow-md;
+    display: flex;
+    @media screen and  (max-width:1200px){
+        margin: 0 35px;
+    }
+    p{
+        font-size: 16px;
+        line-height: 27px;
+        margin:0 0 25px;
+    }
+    h2{
+        font-size: 21px;
+        line-height: 25px;
+        margin:25px 0 0;
+    }
+    a{
+        color:$black;
+    }
+}
+.card:hover{
+    box-shadow: $shadow-lg;
+}
+.card-wrapper{
+    box-sizing: border-box;
+    padding:0px 25px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.cover-image{
+    overflow: hidden;
+    line-height: 0;
+    border-radius: 10px 0 0 10px;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.card-meta{
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    margin:-10px 25px 0;
+    align-items: center;
+    color:$secondary-text;
+    a{
+        color: $secondary-text;
+    }
+    span{
+        margin-left: 10px;
+    }
+    @media screen and (max-width:600px){
+        display: inline-block;
+    }
+}
+.author-link{
+    img{
+        margin-right: 10px;
+    }
+}
+.link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.more{
+    font-weight: 500;
+    background: transparent;
+    border:2px solid $accent;
+    color:$accent;
+    padding: 10px 15px;
+    font-size: 17px;
+}
+.terbaru{
+    position: relative;
+    span{
+        background:$white;
+        position: relative;
+    }
+}
+.terbaru::before{
+    width: 100%;
+    height:1px;
+    background:$shade;
+    content:"";
+    position: absolute;
+    display: inline-block;
+    top:18px;
+}
+.card-date{
+    position: absolute;
+    font-size: 15px;
+    font-weight: 700;
+    color: $grey;
+    top:-30px;
+    right: 0px;
+}
