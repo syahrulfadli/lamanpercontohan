@@ -1,7 +1,7 @@
-baseURL = "kelayu-theme.netlify.app"
+baseURL = "hugobyexample.netlify.app"
 languageCode = "id-ID"
-title = "Kelayu"
-theme = "kelayu"
+title = "Contoh untuk Hugo"
+theme = "aBlogger"
 
 paginate = "6"
 
