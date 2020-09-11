@@ -13,8 +13,6 @@ disqusShortname = "sudo-id"
 [markup.goldmark.renderer]
 unsafe = true
 
-[permalinks]
-  post = "/:filename/"
 
 [taxonomies]
 tag = "tags"
